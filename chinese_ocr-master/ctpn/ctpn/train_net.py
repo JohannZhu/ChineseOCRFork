@@ -33,6 +33,6 @@ if __name__ == '__main__':
     train_net(network, imdb, roidb,
               output_dir=output_dir,
               log_dir=log_dir,
-              pretrained_model='data/pretrain_model/VGG_imagenet.npy',
+              pretrained_model=os.path.join(os.path.abspath(__file__), '../data/pretrain_model/VGG_imagenet.npy'),
               max_iters=int(cfg.TRAIN.max_steps),
               restore=bool(int(cfg.TRAIN.restore)))
