@@ -1,6 +1,6 @@
 import os
 import os.path as osp
-import PIL import Image
+from PIL import Image
 import numpy as np
 import scipy.sparse
 
