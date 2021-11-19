@@ -123,7 +123,8 @@ if __name__ == '__main__':
             img_file = os.path.join(_imagedir, stem + '.jpg')
 
             print(img_file)
-            img = cv2.imread(img_file)
+            # img = cv2.imread(img_file)
+            img = np.array(Image.open(img_path).convert('RGB'))
             img_size = img.shape
 
             doc, objs = generate_xml(stem, lines, img_size, class_sets=class_sets, doncateothers=_doncateothers)
@@ -131,7 +132,7 @@ if __name__ == '__main__':
             cv2.imwrite(os.path.join(_dest_img_dir, stem + '.jpg'), img)
             xmlfile = os.path.join(_dest_label_dir, stem + '.xml')
             with open(xmlfile, 'w') as f:
-                f.write(doc.toprettyxml(indent='	'))
+                f.write(doc.toprettyxml(indent='    '))
 
             ftrain.writelines(stem + '\n')
 
