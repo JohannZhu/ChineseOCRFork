@@ -13,7 +13,7 @@ from lib.networks.factory import get_network
 from lib.fast_rcnn.config import cfg
 
 if __name__ == '__main__':
-    cfg_from_file('ctpn/text.yml')
+    cfg_from_file('text.yml')
     print('Using config:')
     pprint.pprint(cfg)
     imdb = get_imdb('voc_2007_trainval')
