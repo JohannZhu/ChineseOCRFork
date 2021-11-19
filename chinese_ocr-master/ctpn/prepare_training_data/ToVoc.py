@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
             print(img_file)
             # img = cv2.imread(img_file)
-            img = np.array(Image.open(img_path).convert('RGB'))
+            img = np.array(Image.open(img_file).convert('RGB'))
             img_size = img.shape
 
             doc, objs = generate_xml(stem, lines, img_size, class_sets=class_sets, doncateothers=_doncateothers)
