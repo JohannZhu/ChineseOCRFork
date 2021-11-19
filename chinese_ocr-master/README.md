@@ -1,3 +1,5 @@
+Whole repo forked from https://github.com/YCG09/chinese_ocr
+
 ## 简介
 基于Tensorflow和Keras实现端到端的不定长中文字符检测和识别
 
