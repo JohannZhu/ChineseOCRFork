@@ -40,7 +40,7 @@ class Network(object):
         raise NotImplementedError('Must be subclassed.')
 
     def load(self, data_path, session, ignore_missing=False):
-        data_dict = np.load(data_path,encoding='latin1').item()
+        data_dict = np.load(data_path,encoding='latin1',allow_pickle=True).item()
         for key in data_dict:
             with tf.variable_scope(key, reuse=True):
                 for subkey in data_dict[key]:
