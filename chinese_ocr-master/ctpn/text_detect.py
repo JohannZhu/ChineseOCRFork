@@ -33,9 +33,13 @@ def load_tf_model():
     print('Loading network {:s}... '.format("VGGnet_test"))
     saver = tf.train.Saver()
     try:
-        ckpt = tf.train.get_checkpoint_state(cfg.TEST.checkpoints_path)
-        print('Restoring from {}...'.format(ckpt.model_checkpoint_path))
-        saver.restore(sess, ckpt.model_checkpoint_path)
+        # ckpt = tf.train.get_checkpoint_state(cfg.TEST.checkpoints_path)
+        # print('Restoring from {}...'.format(ckpt.model_checkpoint_path))
+        # saver.restore(sess, ckpt.model_checkpoint_path)
+        ckpt = tf.train.get_checkpoint_state(os.environ['CHECK_POINT_PATH'])
+        model_path = os.path.join(os.environ['CHECK_POINT_PATH'], os.environ['MODEL NAME'])
+        print('Restoring from {}...'.format(model_path))
+        saver.restore(sess, model_path)
         print('done')
     except:
         raise 'Check your pretrained {:s}'.format(ckpt.model_checkpoint_path)
