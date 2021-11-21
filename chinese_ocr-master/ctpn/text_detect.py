@@ -37,7 +37,7 @@ def load_tf_model():
         # print('Restoring from {}...'.format(ckpt.model_checkpoint_path))
         # saver.restore(sess, ckpt.model_checkpoint_path)
         ckpt = tf.train.get_checkpoint_state(os.environ['CHECK_POINT_PATH'])
-        model_path = os.path.join(os.environ['CHECK_POINT_PATH'], os.environ['MODEL NAME'])
+        model_path = os.path.join(os.environ['CHECK_POINT_PATH'], os.environ['MODEL_NAME'])
         print('Restoring from {}...'.format(model_path))
         saver.restore(sess, model_path)
         print('done')
