@@ -4,8 +4,8 @@ import numpy as np
 from imp import reload
 from PIL import Image, ImageOps
 
-from keras.layers import Input
-from keras.models import Model
+from tensorflow.keras.layers import Input
+from tensorflow.keras.models import Model
 # import keras.backend as K
 
 from . import keys
